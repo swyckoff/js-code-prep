@@ -1,0 +1,40 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint", "prettier"]
+    }
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "requireConfigFile": false
+  },
+  "plugins": ["prettier"],
+  "rules": {},
+  "ignorePatterns": ["node_modules", "build", "dist", "public"],
+  "root": true
+}

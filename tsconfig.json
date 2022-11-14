@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    // "target": "ES2022"
+    "target": "es2022",
+    // "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true, // Skip type checking of all declaration files
+    // Disables namespace imports (import * as fs from "fs") and enables CJS/AMD/UMD style imports (import fs from "fs")
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    // "isolatedModules": true,
+    // Do not emit output (meaning do not compile code, only perform type checking)
+    "noEmit": false,
+    "jsx": "react-jsx",
+    "strictNullChecks": false,
+    "strictFunctionTypes": true,
+    "checkJs": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "rootDir": "src",
+    "sourceMap": true, // Generate corrresponding .map file
+    "declaration": true, // Generate corresponding .d.ts file
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "incremental": true, // Enable incremental compilation by reading/writing information from prior compilations to a file on disk,
+    "outDir": "dist"
+    // "lib": ["DOM", "es2022", "DOM.Iterable"], // List of library files to be included in the compilation
+    // "isolatedModules": true, // Unconditionally emit imports for unresolved files
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/coverage", "src/**/template-quokka-free.ts"]
+}

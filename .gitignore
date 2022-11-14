@@ -1,0 +1,18 @@
+# Environment
+.vscode/*.log
+.vscode
+preConfigure.sh
+.DS_Store
+package-lock.json
+node_modules/
+
+# Build
+build/
+dist/
+
+# Tooling
+src/coverage/
+# dotenv environment variable files
+.env
+
+temp*
