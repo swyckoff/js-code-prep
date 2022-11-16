@@ -3,7 +3,6 @@ import { QuestionsRoot, Questions, Input } from './types/validAnagrams_242';
 // QUOKKA limitation for free is no import from project imports.
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
-import { Hash } from 'crypto';
 
 function getFilenameNoExtension(): string {
   const filePath = fileURLToPath(import.meta.url);

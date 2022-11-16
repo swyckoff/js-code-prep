@@ -35,5 +35,10 @@
     // "isolatedModules": true, // Unconditionally emit imports for unresolved files
   },
   "include": ["src/**/*"],
-  "exclude": ["src/coverage", "src/**/template-quokka-free.ts"]
+  "exclude": [
+    "src/coverage",
+    "src/**/template-quokka-free.ts",
+    "src/newHackerrank.js",
+    "src/newNeetcode.js"
+  ]
 }

@@ -41,17 +41,17 @@ function onError(err) {
   }
 }
 
+function copyNeedcodeFile(sourceFilename, destinationPath) {
+  copyFile(
+    `${__dirname}/neetcode/templates/${sourceFilename}`,
+    `${__dirname}/neetcode/solutions/${destinationPath}`,
+    onError,
+    'utf-8'
+  );
+}
+
 function createNeetcodeFiles(filename) {
-  copyFile(
-    `${__dirname}/neetcode/template-quokka-free.ts`,
-    `${__dirname}/neetcode/solutions/${filename}.ts`,
-    onError,
-    'utf-8'
-  );
-  copyFile(
-    `${__dirname}/neetcode/template-questions.json`,
-    `${__dirname}/neetcode/solutions/input/${filename}.json`,
-    onError,
-    'utf-8'
-  );
+  copyNeedcodeFile('templateQuokkaFree.ts', `${filename}.ts`);
+  copyNeedcodeFile('input/templateQuestions.json', `input/${filename}.json`);
+  copyNeedcodeFile('types/templateTypes.ts', `types/${filename}.ts`);
 }

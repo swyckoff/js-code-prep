@@ -10,12 +10,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "create": "node src/neetcode.new.js",
-    "hackerrank_create": "node src/hackerrank.new.js",
-    "hackerrank_start": "ts-node-esm src/js/main.ts",
+    "create": "node src/newNeetcode.js",
+    "hackerrank_create": "node src/newHackerrank.js",
     "publish": "semantic-release --no-ci --publish",
-    "start": "NODE_OPTIONS=--experimental-vm-modules ts-node-esm src/neetcode/solutions/containsDuplicates.ts",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "watch": "npm-watch"
   },
   "author": "Steve Wyckoff",
