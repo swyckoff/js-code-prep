@@ -2,7 +2,7 @@
 // QUOKKA limitation for free is no import from project imports.
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
-import { QuestionsRoot, Questions } from '../templates/types/templateTypes';
+import { QuestionsRoot, Questions } from './types/containsDuplicates_217';
 
 function getFilenameNoExtension(): string {
   const filePath = fileURLToPath(import.meta.url);
