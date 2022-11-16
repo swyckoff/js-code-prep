@@ -2,7 +2,7 @@
 // QUOKKA limitation for free is no import from project imports.
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
-import { QuestionsRoot, Questions } from '../templates/types/templateTypes';
+import { QuestionsRoot, Questions, Input } from './types/twoSum_1';
 
 function getFilenameNoExtension(): string {
   const filePath = fileURLToPath(import.meta.url);
@@ -25,11 +25,32 @@ export function parseQuizForQuestions(): Questions[] {
 // END QUOKKADELIMITER
 
 /*
- * Copy from neetcode
- */
+ * Brainstorming: 
+  - naive: loop all { loop all { sum 1st+2nd, if == return}}
+  - better: loop all { 
+    if !> target: 
+      values = new array[input.length] = target-curr ;
+      while looping if = values.has(input[currentindex]) save index, report pair.
 
-function replace(input: Array<number>) {
-  // TODO work here
+  
+  } 
+
+ *  Time O() | Space O()
+ */
+function twoSum({ nums, target }: Input): Array<number> | undefined {
+  const numsMap = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    const complementIndex = numsMap.get(complement);
+
+    if (numsMap.has(complement)) return [i, complementIndex];
+
+    // Save values after looking for the complement to avoid finding the current value / index.
+    numsMap.set(nums[i], i);
+  }
+
+  return undefined;
 }
 
 function main() {
@@ -38,7 +59,7 @@ function main() {
 
   for (const question of questions) {
     console.log('Input: ', question.input);
-    console.log('Actual: ', replace(question.input));
+    console.log('Actual: ', twoSum(question.input));
     console.log('Expected: ', question.expected);
   }
 }
