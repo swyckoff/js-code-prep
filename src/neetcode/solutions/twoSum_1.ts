@@ -35,7 +35,7 @@ export function parseQuizForQuestions(): Questions[] {
   
   } 
 
- *  Time O() | Space O()
+ *  Time O(N) | Space O(N)
  */
 function twoSum({ nums, target }: Input): Array<number> | undefined {
   const numsMap = new Map();
