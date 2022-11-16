@@ -1,5 +1,5 @@
 .PHONY: build clean doc test 
-.DEFAULT_GOAL := compile
+.DEFAULT_GOAL := build
 
 project_name = js-code-prep
 
