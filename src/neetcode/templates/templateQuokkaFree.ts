@@ -30,12 +30,11 @@ export function parseQuizForQuestions(): Questions[] {
  *  Time O() | Space O()
  */
 function replace(input: Input) {
-  // TODO work here
+  // Coded in Typescript. Newlines removed by tsc.
   input;
 }
 
 function main() {
-  console.log(`Node is: ${process.version}`);
   const questions = parseQuizForQuestions();
 
   for (const question of questions) {
@@ -45,4 +44,16 @@ function main() {
   }
 }
 
+function checkNodeVersion() {
+  const nodeVersion = readFileSync('.nvmrc', 'utf-8');
+  const sanitizedVersion = process.version.split('v')[1];
+  console.log(`Node is: ${sanitizedVersion}`);
+  if (sanitizedVersion !== nodeVersion) {
+    throw new Error(
+      `Node mismatch... Nvmrc: '${nodeVersion}', Node: '${process.version}'`
+    );
+  }
+}
+
+checkNodeVersion();
 main();
