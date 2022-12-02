@@ -1,5 +1,5 @@
 'use strict';
-import { copyFile, readFileSync, writeFileSync } from 'fs';
+import { copyFileSync, readFileSync, writeFileSync } from 'fs';
 import * as readline from 'node:readline';
 import { dirname } from 'path';
 import { exit } from 'process';
@@ -43,23 +43,22 @@ function onError(err) {
 }
 
 function copyNeedcodeFile(sourceFilename, destinationPath) {
-  copyFile(
+  copyFileSync(
     `${__dirname}/neetcode/templates/${sourceFilename}`,
-    `${__dirname}/neetcode/solutions/${destinationPath}`,
-    onError,
-    'utf-8'
+    `${__dirname}/neetcode/solutions/${destinationPath}`
   );
 }
 
 function createNeetcodeFiles(filename) {
   copyNeedcodeFile('templateQuokkaFree.ts', `${filename}.ts`);
-  copyNeedcodeFile('input/templateQuestions.json', `input/${filename}.json`);
-  copyNeedcodeFile('types/templateTypes.ts', `types/${filename}.ts`);
+  // copyNeedcodeFile('input/templateQuestions.json', `input/${filename}.json`);
+  // copyNeedcodeFile('types/templateTypes.ts', `types/${filename}.ts`);
 }
 
 function replaceFunctionName(filename) {
   const filePath = `${__dirname}/neetcode/solutions/${filename}.ts`;
   const filenameWithoutNumber = filename.split('_')[0];
+  console.log(filenameWithoutNumber);
 
   let contents = readFileSync(filePath, 'utf-8');
   const replacedFunctionName = contents.replace(
