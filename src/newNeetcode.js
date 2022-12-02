@@ -36,12 +36,6 @@ function main(filename) {
   replaceFunctionName(filename);
 }
 
-function onError(err) {
-  if (err) {
-    console.error(`Error: ${err}`);
-  }
-}
-
 function copyNeedcodeFile(sourceFilename, destinationPath) {
   copyFileSync(
     `${__dirname}/neetcode/templates/${sourceFilename}`,
@@ -51,14 +45,13 @@ function copyNeedcodeFile(sourceFilename, destinationPath) {
 
 function createNeetcodeFiles(filename) {
   copyNeedcodeFile('templateQuokkaFree.ts', `${filename}.ts`);
-  // copyNeedcodeFile('input/templateQuestions.json', `input/${filename}.json`);
-  // copyNeedcodeFile('types/templateTypes.ts', `types/${filename}.ts`);
+  copyNeedcodeFile('input/templateQuestions.json', `input/${filename}.json`);
+  copyNeedcodeFile('types/templateTypes.ts', `types/${filename}.ts`);
 }
 
 function replaceFunctionName(filename) {
   const filePath = `${__dirname}/neetcode/solutions/${filename}.ts`;
   const filenameWithoutNumber = filename.split('_')[0];
-  console.log(filenameWithoutNumber);
 
   let contents = readFileSync(filePath, 'utf-8');
   const replacedFunctionName = contents.replace(
