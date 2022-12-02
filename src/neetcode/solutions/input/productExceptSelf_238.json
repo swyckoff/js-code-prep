@@ -1,0 +1,6 @@
+{
+  "data": [
+    { "input": { "nums": 0, "target": 0 }, "expected": 0 },
+    { "input": { "nums": 1, "target": 1 }, "expected": 1 }
+  ]
+}
