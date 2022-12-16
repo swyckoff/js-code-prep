@@ -11,7 +11,7 @@ function getFilenameNoExtension(): string | undefined {
 function getQuiz(): QuestionsRoot {
   const __filename: string | undefined = getFilenameNoExtension();
   const quiz: string = readFileSync(
-    `./src/neetcode/solutions/input/${__filename}.json`,
+    `./src/hackerrank/solutions/input/${__filename}.json`,
     'utf-8'
   );
   const typedQuiz: QuestionsRoot = JSON.parse(quiz);
