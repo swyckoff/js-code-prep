@@ -23,7 +23,7 @@ const rl = readline.createInterface({
 });
 
 rl.question(
-  'Enter a needcode new filename, without the extension: ',
+  'Enter a neetcode new filename, without the extension: ',
   function (string) {
     filename = string;
     main(filename.split('\n')[0]);
