@@ -2,7 +2,7 @@
 // QUOKKA limitation for free is no import from project imports.
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
-import { QuestionsRoot, Questions, Input } from './types/socksMerchant';
+import { QuestionsRoot, Questions, Input } from './types/sockMerchant';
 
 function getFilenameNoExtension(): string | undefined {
   const filePath = fileURLToPath(import.meta.url);
@@ -29,9 +29,37 @@ export function parseQuizForQuestions(): Questions[] {
 
  *  Time O() | Space O()
  */
-function socksMerchant(input: Input) {
+function socksMerchant({ n, ar }: Input) {
   // Coded in Typescript. Newlines removed by tsc.
-  input;
+  ar;
+  n;
+
+  // Step 1
+  const sockCounts: { [key: number]: number } = {};
+  // const sockCounts = {};
+
+  // Step 2
+  for (const sock of ar) {
+    sockCounts[sock] = (sockCounts[sock] || 0) + 1;
+  }
+
+  // Step 3
+  let numPairs = 0;
+  ar;
+  Object.values(sockCounts);
+  console.log(
+    '🚀 ~ file: sockMerchant.ts:50 ~ socksMerchant ~ Object.values(sockCounts);',
+    Object.values(sockCounts)
+  );
+  for (const count of Object.values(sockCounts)) {
+    count;
+    numPairs += Math.floor(count / 2);
+    numPairs;
+  }
+
+  // Step 4
+  numPairs;
+  return numPairs;
 }
 
 function main() {
