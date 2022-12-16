@@ -37,8 +37,8 @@ function main(filename) {
 
 function createHackerrankFiles(filename) {
   copyFile(
-    `${__dirname}/src/hackerrank/template.ts`,
-    `${__dirname}/src/hackerrank/${filename}.ts`,
+    `${__dirname}/hackerrank/template.ts`,
+    `${__dirname}/hackerrank/${filename}.ts`,
     (err) => {
       if (err) {
         console.error(`Error: ${err}`);
@@ -46,5 +46,5 @@ function createHackerrankFiles(filename) {
     },
     'utf-8'
   );
-  closeSync(openSync(`${__dirname}/src/hackerrank/input/${filename}.txt`, 'w'));
+  closeSync(openSync(`${__dirname}/hackerrank/input/${filename}.txt`, 'w'));
 }
