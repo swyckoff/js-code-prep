@@ -3,6 +3,7 @@
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
 import { QuestionsRoot, Questions, Input } from './types/productExceptSelf_238';
+import { reduce } from 'lodash';
 
 function getFilenameNoExtension(): string | undefined {
   const filePath = fileURLToPath(import.meta.url);
@@ -25,13 +26,23 @@ export function parseQuizForQuestions(): Questions[] {
 // END QUOKKADELIMITER
 
 /*
- * Brainstorming: 
-
+ * Brainstorming:
+ * initial: forall nums: new[n] = reduce rest of array without nums[n]. O(N^2)
+ *
+ * next: forall nums: map[i] = nums[i]
  *  Time O() | Space O()
  */
-function productExceptSelf(input: Input) {
+function productExceptSelf({ nums }: Input) {
   // Coded in Typescript. Newlines removed by tsc.
-  input;
+  nums;
+  const map = new Map<string, number>();
+  for (const i in nums) {
+    map.set(i, nums[i]);
+    console.log(i);
+  }
+  map;
+  // const product = nums.reduce((accumulator, current) => accumulator * current);
+  // product;
 }
 
 function main() {

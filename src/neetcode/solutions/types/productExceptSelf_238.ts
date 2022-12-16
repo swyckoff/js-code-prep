@@ -6,6 +6,5 @@ export interface Questions {
   expected: boolean;
 }
 export interface Input {
-  s: string;
-  t: string;
+  nums: number[];
 }
